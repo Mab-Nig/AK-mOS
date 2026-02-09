@@ -7,20 +7,20 @@ extern const task_t app_task_table[];
 
 /*****************************************************************************/
 /*  DECLARE: Task ID
- *  
+ *
  */
 /*****************************************************************************/
 enum
 {
-	/* SYSTEM TASKS */
+    /* SYSTEM TASKS */
 
-	/* APP TASKS */
-	TASK_1_ID,
-	TASK_2_ID,
-	TASK_3_ID,
+    /* APP TASKS */
+    TASK_1_ID,
+    TASK_2_ID,
+    TASK_3_ID,
 
-	/* EOT task ID (Size of task table)*/
-	TASK_EOT_ID,
+    /* EOT task ID (Size of task table)*/
+    TASK_EOT_ID,
 };
 
 /*****************************************************************************/

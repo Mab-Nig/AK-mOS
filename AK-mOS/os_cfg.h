@@ -33,16 +33,16 @@ extern "C"
 #define OS_CFG_TIMER_TASK_PRI             (0u)  /* Recommend as high as possible */
 
 /* Log config */
-#define OS_CFG_USE_LOG                    (1u)  
+#define OS_CFG_USE_LOG                    (1u)
 
 /* Command line interface config */
-#define OS_CFG_USE_CLI                    (0u)  
+#define OS_CFG_USE_CLI                    (0u)
 
 #if (OS_CFG_USE_LOG || OS_CFG_USE_CLI) == 1
 /* Your print method here */
-#define USER_PRINT(fmt, ...) SYS_PRINT((const char*)fmt, ##__VA_ARGS__)
+#  define USER_PRINT(fmt, ...) SYS_PRINT((const char*)fmt, ##__VA_ARGS__)
 #else
-#define USER_PRINT(fmt, ...) ((void*)0)
+#  define USER_PRINT(fmt, ...) ((void*)0)
 #endif
 
 #ifdef __cplusplus

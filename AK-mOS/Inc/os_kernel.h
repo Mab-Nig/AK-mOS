@@ -23,7 +23,7 @@ extern "C"
 #include <stdio.h>
 
 #if OS_CFG_PRIO_MAX > 255u || OS_CFG_PRIO_MAX < 0u
-#error OS_CFG_PRIO_MAX have to be between 0-255
+#  error OS_CFG_PRIO_MAX have to be between 0-255
 #endif
 
 #define OS_TRUE             ((uint8_t)1)

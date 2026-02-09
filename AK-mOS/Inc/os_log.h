@@ -20,40 +20,40 @@
 #define LOG_ASSERT_EN   (1u)
 #define LOG_SIG_EN      (1u)
 
-#if ( LOG_DBG_EN & OS_CFG_USE_LOG ) == 1
-#define LOG_DBG(fmt, ...) USER_PRINT(KBLU "[DEBUG: %s:%d] " KYEL fmt KNRM "\r\n", (uint8_t *)__FILE__, __LINE__, ##__VA_ARGS__)
+#if (LOG_DBG_EN & OS_CFG_USE_LOG) == 1
+#  define LOG_DBG(fmt, ...) USER_PRINT(KBLU "[DEBUG: %s:%d] " KYEL fmt KNRM "\r\n", (uint8_t *)__FILE__, __LINE__, ##__VA_ARGS__)
 #else
-#define LOG_DBG(fmt, ...) ((void*)0)
+#  define LOG_DBG(fmt, ...) ((void*)0)
 #endif
 
-#if ( LOG_WARN_EN & OS_CFG_USE_LOG ) == 1
-#define LOG_WARN(fmt, ...) USER_PRINT(KYEL "[WARN: %s:%d] " KNRM fmt KNRM "\r\n", (uint8_t *)__FILE__, __LINE__, ##__VA_ARGS__)
+#if (LOG_WARN_EN & OS_CFG_USE_LOG) == 1
+#  define LOG_WARN(fmt, ...) USER_PRINT(KYEL "[WARN: %s:%d] " KNRM fmt KNRM "\r\n", (uint8_t *)__FILE__, __LINE__, ##__VA_ARGS__)
 #else
-#define LOG_WARN(fmt, ...) ((void*)0)
+#  define LOG_WARN(fmt, ...) ((void*)0)
 #endif
 
-#if ( LOG_PRINT_EN & OS_CFG_USE_LOG ) == 1
-#define LOG_PRINT(fmt, ...) USER_PRINT("[PRINTLN] " fmt "\r\n", ##__VA_ARGS__)
+#if (LOG_PRINT_EN & OS_CFG_USE_LOG) == 1
+#  define LOG_PRINT(fmt, ...) USER_PRINT("[PRINTLN] " fmt "\r\n", ##__VA_ARGS__)
 #else
-#define LOG_PRINT(fmt, ...) ((void*)0)
+#  define LOG_PRINT(fmt, ...) ((void*)0)
 #endif
 
-#if ( LOG_ERROR_EN & OS_CFG_USE_LOG ) == 1
-#define LOG_ERROR(fmt, ...) USER_PRINT(KRED "[ERROR: %s:%d] " fmt KNRM "\r\n", (uint8_t *)__FILE__, __LINE__, ##__VA_ARGS__)
+#if (LOG_ERROR_EN & OS_CFG_USE_LOG) == 1
+#  define LOG_ERROR(fmt, ...) USER_PRINT(KRED "[ERROR: %s:%d] " fmt KNRM "\r\n", (uint8_t *)__FILE__, __LINE__, ##__VA_ARGS__)
 #else
-#define LOG_ERROR(fmt, ...) ((void*)0)
+#  define LOG_ERROR(fmt, ...) ((void*)0)
 #endif
 
-#if ( LOG_ASSERT_EN & OS_CFG_USE_LOG ) == 1
-#define LOG_ASSERT(fmt, ...) USER_PRINT(KRED "[ASSERT FAILED: %s:%d] " fmt KNRM "\r\n", (uint8_t *)__FILE__, __LINE__, ##__VA_ARGS__)
+#if (LOG_ASSERT_EN & OS_CFG_USE_LOG) == 1
+#  define LOG_ASSERT(fmt, ...) USER_PRINT(KRED "[ASSERT FAILED: %s:%d] " fmt KNRM "\r\n", (uint8_t *)__FILE__, __LINE__, ##__VA_ARGS__)
 #else
-#define LOG_ASSERT(fmt, ...) ((void*)0)
+#  define LOG_ASSERT(fmt, ...) ((void*)0)
 #endif
 
-#if ( LOG_SIG_EN & OS_CFG_USE_LOG ) == 1
-#define LOG_SIG(fmt, ...) USER_PRINT(KGRN "[SIGNAL: %s:%d] " KMAG fmt KNRM "\r\n", (uint8_t *)__FILE__, __LINE__, ##__VA_ARGS__)
+#if (LOG_SIG_EN & OS_CFG_USE_LOG) == 1
+#  define LOG_SIG(fmt, ...) USER_PRINT(KGRN "[SIGNAL: %s:%d] " KMAG fmt KNRM "\r\n", (uint8_t *)__FILE__, __LINE__, ##__VA_ARGS__)
 #else
-#define LOG_SIG(fmt, ...) ((void*)0)
+#  define LOG_SIG(fmt, ...) ((void*)0)
 #endif
 
 #endif /* OS_LOG_H */

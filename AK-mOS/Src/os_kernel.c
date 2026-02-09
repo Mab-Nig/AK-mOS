@@ -20,14 +20,12 @@ void os_critical_exit(void)
 {
     os_assert(critical_nesting_count, "NESTING CRITICAL UNBALANCED");
     critical_nesting_count--;
-    if (critical_nesting_count == 0)
-    {
+    if (critical_nesting_count == 0) {
         ENABLE_INTERRUPTS
     }
 }
 
-static void
-os_start_first_task(void)
+static void os_start_first_task(void)
 {
     __asm volatile(
         " ldr r0, =0xE000ED08 	    \n" /* Use the NVIC offset register to locate the stack. */
@@ -40,17 +38,16 @@ os_start_first_task(void)
         " isb			            \n"
         " svc 0		                \n" /* System call to start first task. */
         " nop			            \n"
-        " .ltorg                    \n"
-    );
+        " .ltorg                    \n");
 }
 
 void os_init(void)
 {
-    if (TASK_EOT_ID < 1u)
-    {
+    if (TASK_EOT_ID < 1u) {
         LOG_ERROR("OS_ERR_NO_TASK_AVAILABLE - Entering while loop");
         DISABLE_INTERRUPTS
-        while(1);
+        while (1)
+            ;
     }
     os_prio_init();
     os_msg_init();

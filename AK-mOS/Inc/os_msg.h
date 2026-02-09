@@ -58,7 +58,10 @@ extern "C"
 
     void os_msg_queue_init(msg_queue_t *p_msg_q, uint8_t size);
 
-    void os_msg_queue_put_dynamic(msg_queue_t *p_msg_q, int32_t sig, void *p_content, uint8_t size);
+    void os_msg_queue_put_dynamic(msg_queue_t *p_msg_q,
+                                  int32_t sig,
+                                  void *p_content,
+                                  uint8_t size);
 
     void os_msg_queue_put_pure(msg_queue_t *p_msg_q, int32_t sig);
 

@@ -9,9 +9,9 @@
 #define ENABLE_INTERRUPTS           { __asm inline("CPSIE   I \n"); }
 
 
-#define  os_cpu_SVCHandler          SVC_Handler
-#define  os_cpu_PendSVHandler       PendSV_Handler
-#define  os_cpu_SysTickHandler      SysTick_Handler
+#define os_cpu_SVCHandler          SVC_Handler
+#define os_cpu_PendSVHandler       PendSV_Handler
+#define os_cpu_SysTickHandler      SysTick_Handler
 
 
 /* Make PendSV and SysTick the lowest priority interrupts. */

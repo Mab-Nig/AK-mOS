@@ -1,0 +1,105 @@
+BasedOnStyle: LLVM
+ColumnLimit: 90
+
+AlignAfterOpenBracket:     Align
+AlignArrayOfStructures:    Left
+AlignConsecutiveBitFields: Consecutive
+AlignConsecutiveMacros:    Consecutive
+AlignOperands:             DontAlign
+AlignTrailingComments:     Always
+
+AllowShortBlocksOnASingleLine:              Always
+AllowShortCaseLabelsOnASingleLine:          false
+AllowShortCompoundRequirementOnASingleLine: true
+AllowShortEnumsOnASingleLine:               true
+AllowShortFunctionsOnASingleLine:           All
+AllowShortIfStatementsOnASingleLine:        Never
+AllowShortLambdasOnASingleLine:             All
+AllowShortLoopsOnASingleLine:               false
+
+BinPackArguments:            false
+BinPackParameters:           false
+PackConstructorInitializers: CurrentLine
+
+BitFieldColonSpacing: Both
+
+BreakArrays:                    false
+BreakBeforeBinaryOperators:     None
+BreakBeforeConceptDeclarations: Allowed
+BreakBeforeInlineASMColon:      OnlyMultiline
+BreakBeforeTernaryOperators:    true
+BreakConstructorInitializers:   BeforeColon
+BreakInheritanceList:           BeforeColon
+BreakTemplateDeclarations:      Yes
+BreakBeforeBraces:              Custom
+SkipMacroDefinitionBody:        true
+BraceWrapping:
+    AfterControlStatement: MultiLine
+    AfterEnum:             true
+    AfterFunction:         true
+    AfterStruct:           true
+    AfterUnion:            true
+    AfterExternBlock:      true
+    BeforeElse:            true
+    BeforeWhile:           false
+
+ConstructorInitializerIndentWidth: 4
+ContinuationIndentWidth:           4
+PPIndentWidth:                     2
+IndentPPDirectives:                AfterHash
+IndentWidth:                       4
+
+Cpp11BracedListStyle: true
+
+DerivePointerAlignment: true
+
+EmptyLineBeforeAccessModifier: Leave
+
+IncludeBlocks: Preserve
+
+IndentAccessModifiers:         false
+IndentCaseBlocks:              false
+IndentCaseLabels:              false
+IndentGotoLabels:              false
+IndentRequiresClause:          true
+LambdaBodyIndentation:         Signature
+NamespaceIndentation:          All
+RequiresExpressionIndentation: Keyword
+
+InsertBraces:         true
+
+MaxEmptyLinesToKeep: 2
+
+PointerAlignment:   Right
+QualifierAlignment: Leave
+
+ReflowComments: IndentOnly
+
+RemoveBracesLLVM:                 false
+RemoveParentheses:                Leave
+RemoveSemicolon:                  true
+SeparateDefinitionBlocks:         Always
+SortIncludes:                     false
+SortUsingDeclarations:            Never
+
+SpaceAfterCStyleCast:              false
+SpaceAfterLogicalNot:              false
+SpaceAfterTemplateKeyword:         false
+SpaceAroundPointerQualifiers:      Default
+SpaceBeforeAssignmentOperators:    true
+SpaceBeforeCaseColon:              false
+SpaceBeforeCpp11BracedList:        false
+SpaceBeforeCtorInitializerColon:   true
+SpaceBeforeInheritanceColon:       true
+SpaceBeforeJsonColon:              false
+SpaceBeforeParens:                 ControlStatements
+SpaceBeforeRangeBasedForLoopColon: true
+SpaceBeforeSquareBrackets:         false
+SpacesBeforeTrailingComments:      1
+SpaceInEmptyBlock:                 false
+SpacesInAngles:                    Never
+SpacesInContainerLiterals:         false
+SpacesInLineCommentPrefix:
+    Minimum: 1
+    Maximum: -1
+SpacesInParens:                    Never
