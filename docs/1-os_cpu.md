@@ -1,17 +1,17 @@
 
 # Table of Contents
 
-1.  [PendSV Handler](#orgbeeb68e)
-    1.  [Controlling the Handler](#org1ecc3d3)
-2.  [SysTick Handler](#orga77429d)
-    1.  [Controlling the Handler](#org16614d3)
-3.  [SVCall](#org3d31934)
-    1.  [Controlling the Handler](#org3ce9d1a)
-4.  [Critical Error in `os_cpu.h`](#orgebf672c)
+1.  [PendSV Handler](#org3a1b887)
+    1.  [Controlling the Handler](#orgd414d0e)
+2.  [SysTick Handler](#org03dd5ce)
+    1.  [Controlling the Handler](#orgca14ed2)
+3.  [SVCall](#orgd2f0717)
+    1.  [Controlling the Handler](#orga6774a4)
+4.  [Critical Error in `os_cpu.h`](#org400147e)
 
 
 
-<a id="orgbeeb68e"></a>
+<a id="org3a1b887"></a>
 
 # PendSV Handler
 
@@ -28,7 +28,7 @@ Unstack:
 Only accessible from **handler mode**.
 
 
-<a id="org1ecc3d3"></a>
+<a id="orgd414d0e"></a>
 
 ## Controlling the Handler
 
@@ -60,7 +60,7 @@ Only accessible from **handler mode**.
 </table>
 
 
-<a id="orga77429d"></a>
+<a id="org03dd5ce"></a>
 
 # SysTick Handler
 
@@ -69,7 +69,7 @@ This is usually also set to the lowest priority. On an RTOS, it is used to imple
 Calls PendSV every wake up.
 
 
-<a id="org16614d3"></a>
+<a id="orgca14ed2"></a>
 
 ## Controlling the Handler
 
@@ -101,7 +101,7 @@ Calls PendSV every wake up.
 </table>
 
 
-<a id="org3d31934"></a>
+<a id="orgd2f0717"></a>
 
 # SVCall
 
@@ -110,7 +110,7 @@ Used to trigger a system service (e.g. send messages, notify threads, etc.). Act
 Can trigger PendSV if necessary. Used to start the first task in FreeRTOS.
 
 
-<a id="org3ce9d1a"></a>
+<a id="orga6774a4"></a>
 
 ## Controlling the Handler
 
@@ -142,7 +142,7 @@ Can trigger PendSV if necessary. Used to start the first task in FreeRTOS.
 </table>
 
 
-<a id="orgebf672c"></a>
+<a id="org400147e"></a>
 
 # Critical Error in `os_cpu.h`
 
@@ -152,8 +152,8 @@ Line 17-18:
     #define os_cpu_setup_PendSV() \
         (*(uint32_t volatile *)0xE000ED20 |= (0xFFU << 16))
 
-As mentioned in section [PendSV Handler](#orgbeeb68e) and [SysTick Handler](#orga77429d), each handler's priority is specified in a distinct byte. So to "make PendSV and SysTick the lowest priority interrupts", we can do it in either way:
+As mentioned in section [PendSV Handler](#org3a1b887) and [SysTick Handler](#org03dd5ce), each handler's priority is specified in a distinct byte. So to "make PendSV and SysTick the lowest priority interrupts", we can do it in either way:
 
 1.  As in the mentioned sections sequentially.
-2.  `#define os_cpu_setup_PendSV() ((volatile uint32_t *)(SCB->SHP)[3] |= (0xFFFF << 8))`
+2.  `#define os_cpu_setup_PendSV() ((volatile uint32_t *)SCB->SHP)[3] |= (0xFFFF << 8)`
 
